@@ -14,7 +14,7 @@ function readJSONFile(filename) {
 // Функція для запису результатів у файл output.txt
 function writeOutputFile(data) {
     try {
-        const formattedData = data.map(item => ${ item.exchangedate }: ${ item.rate }).join('\n');
+        const formattedData = data.map(item => `${item.exchangedate}: ${item.rate}`).join('\n');
         fs.writeFileSync('output.txt', formattedData);
         console.log('Результати збережено у файлі output.txt');
     } catch (error) {
